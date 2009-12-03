@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class DataBean implements Serializable {
     private String language;
     private String data;
+    private int firstLineNumber;
 
     public String getLanguage() {
         return language;
@@ -35,6 +36,15 @@ public class DataBean implements Serializable {
         int result = 1;
         result = prime * result + language.hashCode();
         result = prime * result + data.hashCode();
+        result = prime * result + firstLineNumber * prime;
         return result;
+    }
+
+    public int getFirstLineNumber() {
+        return firstLineNumber;
+    }
+
+    public void setFirstLineNumber(int firstLineNumber) {
+        this.firstLineNumber = firstLineNumber;
     }
 }

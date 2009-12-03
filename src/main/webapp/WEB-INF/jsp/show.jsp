@@ -21,7 +21,7 @@
     </head>
     <body>
         <div>
-            <code class="<c:out value="${dataBean.language}"/>"><c:out value="${dataBean.data}"/></code>
+            <pre class="ln-${dataBean.firstLineNumber}"><code class="<c:out value="${dataBean.language}"/>"><c:out value="${dataBean.data}"/></code></pre>
         </div>
     </body>
 </html>

@@ -40,10 +40,11 @@ public class PasteController {
     }
 
     @RequestMapping(value = "/add.do")
-    public void add(String data, String language, Writer out ) throws IOException {
+    public void add(String data, String language, Integer lineNumber, Writer out ) throws IOException {
         DataBean dataBean = new DataBean();
         dataBean.setLanguage(language);
         dataBean.setData(data);
+        dataBean.setFirstLineNumber(lineNumber);
         Integer code = Math.abs(dataBean.hashCode());
         pastedataCache.put(new Element(code, dataBean));
         out.write(""+code);
